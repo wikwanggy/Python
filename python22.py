@@ -80,5 +80,7 @@ import random
 
 import webbrowser
 
-
-webbrowser.open("http://www.google.com/")
+urL='https://www.google.com'
+chrome_path="C:/Program Files/Google/Chrome/Application/chrome.exe %s"
+webbrowser.get(chrome_path).open(urL)
+# webbrowser.open("http://www.google.com/")
