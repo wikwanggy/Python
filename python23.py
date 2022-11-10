@@ -100,14 +100,21 @@
 import os
 # search함수 선언
 def search(dirname):
-    # print(dirname)
-    # dirname디렉터리 안에 파일들의 리스트를 filenames변수에 저장
-    filenames=os.listdir(dirname)
-    for filename in filenames: 
-        full_name=os.path.join(dirname, filename)
-        # splitext : 파일에는 파일명.확장자 형식으로 되어 있는데, 이를 파일명과 확장자를 구분해서 나눠줌
-        ext=os.path.splitext(full_name)[-1]
-        if ext==".json":
-            print(full_name)  
+    try:
+        # print(dirname)
+        # dirname디렉터리 안에 파일들의 리스트를 filenames변수에 저장
+        filenames=os.listdir(dirname)
+        for filename in filenames: 
+            full_name=os.path.join(dirname, filename)
+            # splitext : 파일에는 파일명.확장자 형식으로 되어 있는데, 이를 파일명과 확장자를 구분해서 나눠줌
+            ext=os.path.splitext(full_name)[-1]
+            if os.path.isdir(full_name): #C:/ 밑에 폴더가 있으면(isdir)
+                search(full_name) # 그 폴더도 다시 검색
+            else:
+                ext=os.path.splitext(full_name)[-1]
+                if ext==".json":
+                    print(full_name)
+    except PermissionError: 
+        pass
 # search함수 호출
 search("C:/")
