@@ -91,11 +91,11 @@ for i in range(1,101):
     print(i)
     
 # 연습문제 5. A 학급에 총 10명의 학생이 있다. 이 학생들의 중간고사 점수는 다음과 같다.
-A = [70, 60, 55, 75, 95, 90, 80, 80, 85, 100]
-total = 0
-for score in A:
-    total += sum(score)
-print(score)
+# A = [70, 60, 55, 75, 95, 90, 80, 80, 85, 100]
+# total = 0
+# for score in A:
+#     total += sum(score)
+# print(score)
 #average = total / 10
 #print(average)
 
