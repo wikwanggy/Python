@@ -1,2 +1,4 @@
-# Python
-Python 공부
+### Python
+
+:green_book:
+
